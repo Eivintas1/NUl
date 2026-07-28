@@ -1,0 +1,87 @@
+.contact {
+  padding: 8rem 3rem;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.contact__inner {
+  max-width: 700px;
+}
+
+.contact__heading {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  letter-spacing: -0.03em;
+  color: var(--paper);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.contact__text {
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 480px;
+}
+
+.contact__email {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+
+.contact__email:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.contact__socials {
+  display: flex;
+  gap: 2rem;
+}
+
+.contact__social {
+  font-family: 'SF Mono', 'Cascadia Code', Consolas, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.contact__social::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.contact__social:hover {
+  color: var(--paper);
+}
+
+.contact__social:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .contact {
+    padding: 5rem 1.5rem;
+  }
+  .contact__socials {
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+}

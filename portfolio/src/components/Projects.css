@@ -1,0 +1,137 @@
+.projects {
+  padding: 8rem 3rem;
+}
+
+.projects__list {
+  margin-top: 3rem;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto auto;
+  gap: 2rem;
+  align-items: start;
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(240, 237, 230, 0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: padding-left 0.3s ease;
+  cursor: pointer;
+}
+
+.project:last-child {
+  border-bottom: 1px solid rgba(240, 237, 230, 0.08);
+}
+
+.project--active {
+  padding-left: 1rem;
+}
+
+.project__index {
+  font-family: 'SF Mono', 'Cascadia Code', Consolas, monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  padding-top: 0.35rem;
+}
+
+.project__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project__header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+
+.project__title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--paper);
+  transition: color 0.2s ease;
+}
+
+.project--active .project__title {
+  color: var(--accent);
+}
+
+.project__category {
+  font-family: 'SF Mono', 'Cascadia Code', Consolas, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project__desc {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+.project__tech {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.project__tech li {
+  font-family: 'SF Mono', 'Cascadia Code', Consolas, monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  padding: 0.25rem 0.6rem;
+  border: 1px solid rgba(240, 237, 230, 0.1);
+}
+
+.project__year {
+  font-family: 'SF Mono', 'Cascadia Code', Consolas, monospace;
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding-top: 0.35rem;
+}
+
+.project__arrow {
+  font-size: 1.5rem;
+  color: var(--muted);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease;
+  padding-top: 0.15rem;
+}
+
+.project--active .project__arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 5rem 1.5rem;
+  }
+  .project {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 2rem 0;
+  }
+  .project--active {
+    padding-left: 0;
+  }
+  .project__index {
+    display: none;
+  }
+  .project__year {
+    display: none;
+  }
+  .project__arrow {
+    display: none;
+  }
+  .project__header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
